@@ -1,8 +1,119 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Base from "../layouts/Base.astro";
+const title = "How to identify the Asian hornet (Vespa velutina)";
+const description = "Identification guide to distinguish the Asian hornet from wasps, honey bees and the European hornet.";
 ---
-<Layout title="Identification Guide">
-  <h1>How to identify the Asian hornet</h1>
-  <p>The Asian hornet (Vespa velutina) is an invasive species...</p>
-  <img src="/images/asian-hornet.jpg" alt="Asian hornet">
-</Layout>
+
+<Base {title} {description}>
+  <article class="card">
+    <h1>How to identify the Asian hornet (<em>Vespa velutina</em>)</h1>
+    <p>
+      The Asian hornet is an invasive species established in France and now spreading into the UK.
+      Quick, accurate identification is important to protect pollinators and prevent false reports.
+    </p>
+
+    <h2>Key features</h2>
+    <ul>
+      <li>Dark brown/black body</li>
+      <li>Broad orange band near the end of the abdomen</li>
+      <li>Yellow legs (“yellow socks”)</li>
+      <li>Black head with orange/yellow face</li>
+      <li>Brown-tinted wings</li>
+      <li>Smaller than the European hornet (<em>Vespa crabro</em>)</li>
+    </ul>
+
+    <h2>Nests</h2>
+    <p>
+      Large papery nests, up to 80 cm, usually smooth with a side entrance.
+      Found high in trees but also in sheds or roof spaces. Never disturb a nest yourself.
+    </p>
+
+    <h2>Confusion species</h2>
+    <div class="grid grid-2">
+      <div>
+        <img src="/images/asian-hornet.jpg" alt="Asian hornet" />
+        <p><strong>Asian hornet</strong> – dark body, orange band, yellow legs.</p>
+      </div>
+      <div>
+        <img src="/images/european-hornet.jpg" alt="European hornet" />
+        <p><strong>European hornet</strong> – larger, more yellow, reddish thorax.</p>
+      </div>
+      <div>
+        <img src="/images/common-wasp.jpg" alt="Common wasp" />
+        <p><strong>Common wasp</strong> – much smaller, striped yellow/black, thin waist.</p>
+      </div>
+      <div>
+        <img src="/images/honeybee.jpg" alt="Honey bee" />
+        <p><strong>Honey bee</strong> – smaller, furry, golden-brown, carries pollen baskets.</p>
+      </div>
+    </div>
+
+    <h2>Comparison table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Species</th>
+          <th>Size</th>
+          <th>Colour features</th>
+          <th>Key giveaway</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Asian hornet</td>
+          <td>19–24 mm (queen up to 30 mm)</td>
+          <td>Dark body, orange band, yellow legs</td>
+          <td>“Yellow socks”</td>
+        </tr>
+        <tr>
+          <td>European hornet</td>
+          <td>Up to 35 mm</td>
+          <td>More yellow, reddish thorax</td>
+          <td>Larger, native</td>
+        </tr>
+        <tr>
+          <td>Common wasp</td>
+          <td>10–15 mm</td>
+          <td>Bright yellow/black stripes</td>
+          <td>Much smaller</td>
+        </tr>
+        <tr>
+          <td>Honey bee</td>
+          <td>10–12 mm</td>
+          <td>Brown/golden, hairy</td>
+          <td>Fuzzy, pollen baskets</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Reporting a sighting</h2>
+    <ul>
+      <li><strong>In France</strong>: report sightings through your regional authority or government portal.</li>
+      <li>
+        <strong>In the UK</strong>: use the 
+        <a href="https://www.gov.uk/government/publications/asian-hornet-uk-sightings" target="_blank" rel="noopener noreferrer">
+          Asian Hornet Watch app
+        </a> or DEFRA’s online form.
+      </li>
+    </ul>
+
+    <p><em>Identification criteria adapted from UK Government and Non-Native Species Secretariat guidance (Open Government Licence v3.0).</em></p>
+  </article>
+</Base>
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  th, td {
+    border: 1px solid #2a3340;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  th {
+    background: #12161b;
+  }
+</style>
+
