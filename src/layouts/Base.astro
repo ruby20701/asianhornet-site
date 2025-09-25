@@ -32,6 +32,20 @@ const { title = "Asian hornet information hub", description = "Identify, report,
   header,footer{ padding:1.25rem; max-width:1000px; margin:0 auto; }
   .container{ max-width:1000px; margin:0 auto; padding:1.25rem; }
 
+  a {
+    color: var(--link);
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: var(--link); /* force visited links to stay amber/yellow */
+  }
+  
+  a:hover {
+    color: var(--accent); /* brighten on hover */
+    text-decoration: underline;
+  }
+
   /* Nav */
   header nav{ display:flex; gap:1rem; border-bottom:1px solid var(--accent); padding-bottom:.5rem; }
   nav a{ color:var(--accent); font-weight:600; text-decoration:none; }
