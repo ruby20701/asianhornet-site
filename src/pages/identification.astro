@@ -126,11 +126,17 @@ const description = "Identification guide to distinguish the Asian hornet from w
     margin: 1rem 0;
   }
   th, td {
-    border: 1px solid #2a3340;
+    border: 1px solid var(--border);
     padding: 0.5rem;
     text-align: left;
   }
-  th {
-    background: #12161b;
+  thead th {
+    background: var(--accent); /* gold */
+    color: #111;
+    font-weight: 700;
+  }
+  tbody tr:nth-child(even) {
+    background: #0f1317;
   }
 </style>
+
