@@ -148,6 +148,27 @@ a:hover, a:focus {
   small {
     color: var(--muted);
   }
+
+/* Force site-wide link colours */
+body a,
+body a:link,
+body a:visited {
+  color: var(--link) !important;      /* amber */
+  text-decoration: none !important;
+}
+
+body a:hover,
+body a:focus {
+  color: var(--accent) !important;    /* gold on hover */
+  text-decoration: underline !important;
+}
+
+/* Keep nav links gold */
+header nav a,
+header nav a:visited {
+  color: var(--accent) !important;
+}
+
 </style>
 
 
