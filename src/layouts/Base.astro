@@ -187,7 +187,20 @@ header nav a:visited {
       <slot />
     </main>
     <footer>
-      <small>© {new Date().getFullYear()} asianhornet.com · </small>
-    </footer>
+  <small>
+    © {new Date().getFullYear()} asianhornet.com · part of ammfrance.com · 
+    <a href="/about" class="footer-link">about us</a>
+  </small>
+</footer>
+
+<style>
+  footer .footer-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  footer .footer-link:hover {
+    text-decoration: underline;
+  }
+</style>
   </body>
 </html>
