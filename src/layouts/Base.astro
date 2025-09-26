@@ -194,13 +194,18 @@ header nav a:visited {
 </footer>
 
 <style>
-  footer .footer-link {
-    color: inherit;
-    text-decoration: none;
-  }
-  footer .footer-link:hover {
-    text-decoration: underline;
-  }
+ footer .footer-link,
+footer .footer-link:visited {
+  color: var(--muted) !important; /* match muted text colour */
+  text-decoration: none !important;
+}
+
+footer .footer-link:hover,
+footer .footer-link:focus {
+  color: var(--accent) !important; /* gold on hover */
+  text-decoration: underline !important;
+}
+
 </style>
   </body>
 </html>
