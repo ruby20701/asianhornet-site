@@ -34,4 +34,5 @@ Goal: publish a fast, cheap, portable site now, then add a sightings DB later.
 
 ## Why no map yet
 - Maps attract spam and false reports. Publish first. Add data once you have moderation capacity.
+- 
 
