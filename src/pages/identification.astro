@@ -136,7 +136,13 @@ const description = "Learn how to spot the Asian hornet (Vespa velutina), also c
     gap: 1rem;
   }
   .grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr; /* default 1 column */
+  }
+
+@media (min-width: 600px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr); /* switch to 2 columns at 600px+ */
+  }
   }
 
   /* Centre content inside each grid cell */
