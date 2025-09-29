@@ -11,177 +11,157 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <!-- Plausible analytics: replace domain with asianhornet.com after DNS is live -->
+
+    <!-- Plausible analytics -->
     <script defer data-domain="asianhornet.com" src="https://plausible.io/js/script.js"></script>
 
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
-    
-<style is:global>
-  :root {
-    --bg:#0b0e11;
-    --card:#12161b;
-    --text:#e8eef3;  /* main body text */
-    --muted:#9fb3c8; /* secondary text */
-    --accent:#FFD700; /* hornet gold */
-    --link:#FFB300;   /* amber link colour */
-    --border:#2a3340; /* subtle border */
-  }
+    <style is:global>
+      :root {
+        --bg:#0b0e11;
+        --card:#12161b;
+        --text:#e8eef3;  /* main body text */
+        --muted:#9fb3c8; /* secondary text */
+        --accent:#FFD700; /* hornet gold */
+        --link:#FFB300;   /* amber link colour */
+        --border:#2a3340; /* subtle border */
+      }
 
-  * { box-sizing:border-box; }
+      * { box-sizing: border-box; }
 
-  body {
-    margin:0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    background: var(--bg);
-    color: var(--text);
-  }
-</style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        background: var(--bg);
+        color: var(--text);
+      }
 
-  header, footer {
-    padding: 1.25rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+      header, footer {
+        padding: 1.25rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
 
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 1.25rem;
-  }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 1.25rem;
+      }
 
-  /* Nav */
-  header nav {
-    display: flex;
-    gap: 1rem;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: .5rem;
-  }
-  nav a {
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-  }
-  nav a:hover {
-    text-decoration: underline;
-  }
+      /* Nav */
+      header nav {
+        display: flex;
+        gap: 1rem;
+        border-bottom: 1px solid var(--accent);
+        padding-bottom: .5rem;
+      }
+      nav a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      nav a:hover { text-decoration: underline; }
 
-  /* Headings */
-  h1, h2 {
-    color: var(--accent);
-  }
+      /* Headings */
+      h1, h2 { color: var(--accent); }
 
-  /* Links */
-  a, a:visited, a:link {
-  color: var(--link) !important; /* amber */
-  text-decoration: none !important;
-}
+      /* Links */
+      a, a:visited, a:link {
+        color: var(--link) !important;  /* amber */
+        text-decoration: none !important;
+      }
+      a:hover, a:focus {
+        color: var(--accent) !important; /* gold on hover */
+        text-decoration: underline !important;
+      }
 
-a:hover, a:focus {
-  color: var(--accent) !important; /* gold on hover */
-  text-decoration: underline !important;
-}
+      /* Cards */
+      .card {
+        background: var(--card);
+        padding: 1rem;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        border: 1px solid rgba(255,215,0,.15); /* faint gold border */
+      }
 
-  /* Cards */
-  .card {
-    background: var(--card);
-    padding: 1rem;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-    border: 1px solid rgba(255,215,0,.15); /* faint gold border */
-  }
+      /* Buttons */
+      .btn {
+        background: var(--accent);
+        color: #111;
+        padding: .6rem .9rem;
+        border-radius: 12px;
+        font-weight: 700;
+        display: inline-block;
+        border: 0;
+        cursor: pointer;
+      }
+      .btn:hover { filter: brightness(.95); }
+      .btn:active { transform: translateY(1px); }
 
-  /* Buttons */
-  .btn {
-    background: var(--accent);
-    color: #111;
-    padding: .6rem .9rem;
-    border-radius: 12px;
-    font-weight: 700;
-    display: inline-block;
-    border: 0;
-    cursor: pointer;
-  }
-  .btn:hover {
-    filter: brightness(.95);
-  }
-  .btn:active {
-    transform: translateY(1px);
-  }
+      /* Forms */
+      input, textarea {
+        width: 100%;
+        padding: .6rem .7rem;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #0f1317;
+        color: var(--text);
+      }
+      label {
+        display: block;
+        margin: .5rem 0 .25rem;
+        color: var(--muted);
+      }
 
-  /* Forms */
-  input, textarea {
-    width: 100%;
-    padding: .6rem .7rem;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: #0f1317;
-    color: var(--text);
-  }
-  label {
-    display: block;
-    margin: .5rem 0 .25rem;
-    color: var(--muted);
-  }
+      /* Layout helpers */
+      .grid { display: grid; gap: 1rem; }
+      @media (min-width: 800px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
 
-  /* Layout helpers */
-  .grid {
-    display: grid;
-    gap: 1rem;
-  }
-  @media (min-width: 800px) {
-    .grid-2 { grid-template-columns: 1fr 1fr; }
-  }
+      /* Tables */
+      table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+      th, td { border: 1px solid var(--border); padding: .5rem; text-align: left; }
+      th { background: var(--accent); color: #111; }
+      tr:nth-child(even) { background: #0f1317; }
 
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-  }
-  th, td {
-    border: 1px solid var(--border);
-    padding: .5rem;
-    text-align: left;
-  }
-  th {
-    background: var(--accent);
-    color: #111;
-  }
-  tr:nth-child(even) {
-    background: #0f1317;
-  }
+      small { color: var(--muted); }
 
-  small {
-    color: var(--muted);
-  }
+      /* Force site-wide link colours */
+      body a,
+      body a:link,
+      body a:visited {
+        color: var(--link) !important;
+        text-decoration: none !important;
+      }
+      body a:hover,
+      body a:focus {
+        color: var(--accent) !important;
+        text-decoration: underline !important;
+      }
 
-/* Force site-wide link colours */
-body a,
-body a:link,
-body a:visited {
-  color: var(--link) !important;      /* amber */
-  text-decoration: none !important;
-}
+      /* Keep nav links gold */
+      header nav a,
+      header nav a:visited {
+        color: var(--accent) !important;
+      }
 
-body a:hover,
-body a:focus {
-  color: var(--accent) !important;    /* gold on hover */
-  text-decoration: underline !important;
-}
-
-/* Keep nav links gold */
-header nav a,
-header nav a:visited {
-  color: var(--accent) !important;
-}
-
-</style>
-
-
+      /* Footer link override */
+      footer .footer-link,
+      footer .footer-link:visited {
+        color: var(--muted) !important;
+        text-decoration: none !important;
+      }
+      footer .footer-link:hover,
+      footer .footer-link:focus {
+        color: var(--accent) !important;
+        text-decoration: underline !important;
+      }
+    </style>
   </head>
+
   <body>
     <header>
       <nav>
@@ -192,29 +172,16 @@ header nav a:visited {
         <a href="/about">About</a>
       </nav>
     </header>
+
     <main class="container">
       <slot />
     </main>
+
     <footer>
-  <small>
-    © {new Date().getFullYear()} asianhornet.com · part of ammfrance.com · 
-    <a href="/about" class="footer-link">about us</a>
-  </small>
-</footer>
-
-<style>
- footer .footer-link,
-footer .footer-link:visited {
-  color: var(--muted) !important; /* match muted text colour */
-  text-decoration: none !important;
-}
-
-footer .footer-link:hover,
-footer .footer-link:focus {
-  color: var(--accent) !important; /* gold on hover */
-  text-decoration: underline !important;
-}
-
-</style>
+      <small>
+        © {new Date().getFullYear()} asianhornet.com · part of ammfrance.com ·
+        <a href="/about" class="footer-link">about us</a>
+      </small>
+    </footer>
   </body>
 </html>
