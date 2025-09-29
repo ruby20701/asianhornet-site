@@ -102,7 +102,7 @@ const description = "Learn how to spot the Asian hornet (Vespa velutina), also c
           pdf
         </a>.
       </li>
-
+    </ul>
     <h2>Reporting a sighting</h2>
     <ul>
       <li><strong>In France</strong>: Asian hornets are well established so reporting is not required but you can send in details to the community site 
@@ -130,6 +130,32 @@ const description = "Learn how to spot the Asian hornet (Vespa velutina), also c
 </Base>
 
 <style>
+    /* Grid utilities (2 columns on larger screens, 1 on small) */
+  .grid {
+    display: grid;
+    gap: 1rem;
+  }
+  .grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  /* Centre content inside each grid cell */
+  .grid.grid-2 > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centers the image horizontally */
+    text-align: center;    /* centers the captions */
+    gap: 0.5rem;
+  }
+
+  /* Make images responsive but keep intrinsic ratio */
+  .grid.grid-2 img {
+    display: block;
+    margin: 0 auto;        /* belt-and-braces centering */
+    max-width: 100%;
+    height: auto;
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
