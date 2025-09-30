@@ -1,57 +1,145 @@
 ---
 import Base from "../layouts/Base.astro";
 const title = "How to report an Asian hornet sighting";
-const description = "Report Asian hornet sightings through official channels. Learn what evidence to collect and how to stay safe around nests.";
-const site = 'https://asianhornet.com';
+const description = "Report Asian hornet sightings through official channels. What to capture, how to stay safe, and what happens after you report.";
+const site = "https://asianhornet.com";
 
 const breadcrumb = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
-    { '@type': 'ListItem', position: 2, name: 'Report a sighting', item: `${site}/report/` }
+    { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
+    { "@type": "ListItem", position: 2, name: "Report a sighting", item: `${site}/report/` }
   ]
 };
 
 const howTo = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'Report an Asian hornet sighting',
-  description: 'What to capture and where to submit your report.',
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Report an Asian hornet sighting",
+  description: "Step-by-step guidance to capture useful evidence and submit to the correct authority.",
   step: [
-    { '@type': 'HowToStep', name: 'Observe safely', text: 'Keep distance from any nest; do not disturb.' },
-    { '@type': 'HowToStep', name: 'Collect evidence', text: 'Take a clear photo or video if safe; note date, time, and exact location.' },
-    { '@type': 'HowToStep', name: 'Submit to authorities', text: 'Use the official reporting service for your country (e.g., UK Asian Hornet Watch app).' }
+    { "@type": "HowToStep", name: "Stay safe", text: "Keep at least 5–10 metres from any nest. Do not disturb hornets or approach nests." },
+    { "@type": "HowToStep", name: "Collect evidence", text: "If safe, take a clear photo/video. Note date, time, precise location (GPS if possible), number seen, behaviour (feeding, nest, flight path)." },
+    { "@type": "HowToStep", name: "Submit your report", text: "Use your country’s official reporting channel (see links on this page)." }
   ]
 };
 ---
 
 <Base {title} {description}>
- <!-- Report page content -->
-
+  <!-- JSON-LD (single include) -->
   <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
   <script type="application/ld+json">{JSON.stringify(howTo)}</script>
 
   <article class="card">
-    <h1>Asian hornet sightings</h1>
+    <h1>Report an Asian hornet sighting</h1>
     <p>
-      This interactive map shows confirmed and suspected sightings of the Asian hornet in the UK. 
-      Please note that accuracy depends on official reporting and updates. 
-      Click on a marker for more details.
-      In France, the Asian hornet is now found in every department and sightings are no longer recorded centrally.
+      Quick, accurate reporting helps authorities track and control the spread of the Asian hornet. 
+      Follow the checklist below, then use the official link for your country.
+      Not sure what you saw? Double-check the <a href="/identification/">identification guide</a> first.
     </p>
 
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem;">
-      <iframe
-        src="https://www.google.com/maps/d/embed?mid=1BGAdYHaIszxPKWrjX8dASHpU8mN-_2HV&ehbc=2E312F"
-        title="Asian Hornet Sightings Map"
-        style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-    </div>
-  </article>
+    <!-- Fast checklist -->
+    <section aria-labelledby="checklist">
+      <h2 id="checklist">Checklist</h2>
+      <ol>
+        <li><strong>Stay safe</strong> — keep your distance from any nest; do not disturb.</li>
+        <li><strong>Take a photo</strong> (or short video) if safe. Aim to show <em>yellow legs</em> and the <em>orange band</em> toward the end of the abdomen.</li>
+        <li><strong>Record details</strong> — date, time, precise location (GPS), number seen, behaviour (feeding, nest, flight path).</li>
+        <li><strong>Report</strong> via the official channel for your country (below).</li>
+      </ol>
+      <p style="margin-top:.5rem">
+        Prefer something printable? <a href="/files/asian-hornet-id-report-checklist.pdf">Download the 1-page ID & reporting checklist (PDF)</a>.
+        <!-- TODO: add the PDF at /public/files/asian-hornet-id-report-checklist.pdf -->
+      </p>
+    </section>
 
-  <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
-  <script type="application/ld+json">{JSON.stringify(howTo)}</script>
+    <!-- Official reporting links -->
+    <section aria-labelledby="links">
+      <h2 id="links">Official reporting links</h2>
+
+      <h3>United Kingdom</h3>
+      <ul>
+        <li><strong>Asian Hornet Watch app</strong> — report with photo directly to authorities.
+          <!-- Replace # with actual store links when ready -->
+          (<a href="#" rel="noopener" target="_blank">Apple</a> / <a href="#" rel="noopener" target="_blank">Android</a>)
+        </li>
+        <li><strong>National Bee Unit</strong> — guidance and reporting information:
+          <a href="https://www.nationalbeeunit.com/" rel="noopener" target="_blank">nationalbeeunit.com</a>
+        </li>
+      </ul>
+
+      <h3>France</h3>
+      <ul>
+        <li><strong>Government guidance</strong> — Ministère de l’Agriculture:
+          <a href="https://agriculture.gouv.fr" rel="noopener" target="_blank">agriculture.gouv.fr</a>
+        </li>
+        <li><strong>Local mairie / préfecture</strong> — follow local instructions. (France no longer records every sighting centrally.)</li>
+      </ul>
+
+      <h3>Elsewhere in Europe</h3>
+      <p>
+        Check your national agriculture or environment ministry website for the current reporting procedure.
+        If unsure, contact your local beekeeping association (see <a href="/resources/">Resources</a>).
+      </p>
+    </section>
+
+    <!-- Evidence tips -->
+    <section aria-labelledby="evidence">
+      <h2 id="evidence">Photo & evidence tips</h2>
+      <ul>
+        <li>Try to capture a <strong>clear side view</strong> showing <em>yellow legs</em> and the <em>single orange band</em> toward the end of the abdomen.</li>
+        <li>Use <strong>zoom</strong> rather than moving closer; avoid shadows and motion blur.</li>
+        <li>If no photo is possible, detailed notes (size, colour, behaviour, location) still help.</li>
+      </ul>
+    </section>
+
+    <!-- Safety notice -->
+    <section aria-labelledby="safety">
+      <h2 id="safety">Safety notice</h2>
+      <p>
+        ⚠️ <strong>Do not attempt to destroy a nest yourself.</strong> Nests can contain thousands of hornets and are dangerous if disturbed.
+        Control should be carried out by trained professionals.
+      </p>
+    </section>
+
+    <!-- What happens next -->
+    <section aria-labelledby="next">
+      <h2 id="next">After you report</h2>
+      <ul>
+        <li>Authorities may contact you for more information or to request the original photo/video.</li>
+        <li>Where appropriate, inspectors may visit the location to assess and, if needed, locate a nest.</li>
+        <li>Not every report receives a personal reply, but all verified reports help improve the response.</li>
+      </ul>
+    </section>
+
+    <!-- Sightings map block (kept) -->
+    <section aria-labelledby="map">
+      <h2 id="map">Sightings map</h2>
+      <p>
+        This interactive map shows confirmed and suspected sightings in the UK based on public reports and updates from official sources.
+        Accuracy and completeness depend on those sources. In France, the Asian hornet is established nationwide and sightings are not recorded centrally.
+      </p>
+
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem;">
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1BGAdYHaIszxPKWrjX8dASHpU8mN-_2HV&ehbc=2E312F"
+          title="Asian hornet sightings map (UK)"
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Internal navigation -->
+    <nav aria-label="Related">
+      <p style="margin-top:1rem">
+        Not certain it was an Asian hornet? Read the <a href="/identification/">identification guide</a>.
+        Need organisations and tools? See <a href="/resources/">resources</a>.
+      </p>
+    </nav>
+  </article>
 </Base>
+
