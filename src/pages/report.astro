@@ -51,32 +51,6 @@ const howTo = {
     </div>
   </article>
 
-  <article class="card">
-    <h1>Report a sighting</h1>
-    <p>Start with a photo if you have one. If you are not sure, submit anyway. We will triage and respond.</p>
-    <form method="post" action="#" onsubmit="alert('Form endpoint not yet connected. See README to enable.'); return false;">
-      <div class="row row-2">
-        <div>
-          <label for="name">Your name</label>
-          <input id="name" name="name" required />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" required />
-        </div>
-      </div>
-      <label for="location">Nearest town and country</label>
-      <input id="location" name="location" placeholder="e.g., Poitiers, France" required />
-      <label for="when">When did you see it</label>
-      <input id="when" name="when" placeholder="2025-09-25 14:30" />
-      <label for="details">Details</label>
-      <textarea id="details" name="details" rows="5" placeholder="Size estimate, behavior, nest location, etc."></textarea>
-      <label for="photo">Photo (link for now)</label>
-      <input id="photo" name="photo" placeholder="Paste a share link" />
-      <p><button class="btn" type="submit">Submit</button></p>
-      <small>We will replace this with a secure endpoint or Supabase when ready.</small>
-    </form>
-  </article>
   <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
   <script type="application/ld+json">{JSON.stringify(howTo)}</script>
 </Base>
