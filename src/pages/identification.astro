@@ -1,8 +1,35 @@
 ---
 import Base from "../layouts/Base.astro";
-
 const title = "How to identify the Asian hornet (Vespa velutina)";
-const description = "Learn how to spot the Asian hornet (Vespa velutina), also called the yellow-legged hornet. Identification guide with key features to distinguish it from wasps, honey bees and the European hornet.";
+const description = "Learn the key features of the Asian hornet and how to tell it apart from the European hornet, wasps and honey bees.";
+const site = 'https://asianhornet.com';
+
+const faqs = [
+  { q: "How big is an Asian hornet?", a: "Workers are ~19–24 mm (queens up to ~30 mm), smaller than the European hornet." },
+  { q: "What colour are Asian hornets?", a: "Dark brown/black with a broad orange band toward the end of the abdomen and yellow legs." },
+  { q: "How do I distinguish it from the European hornet?", a: "Asian hornets are smaller, darker, with yellow legs and a single orange abdominal band; European hornets are larger with more yellow markings." },
+  { q: "Are Asian hornets aggressive?", a: "They defend nests if disturbed but are generally not aggressive at distance. Keep away from nests and report sightings to authorities." },
+  { q: "What should I do if I see one?", a: "Take a clear photo if safe, note location/date/time, and report via your country’s official channel (e.g., UK Asian Hornet Watch app)." }
+];
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: 'Identify', item: `${site}/identify/` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({q,a}) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a }
+  }))
+};
 ---
 
 <Base {title} {description}>
@@ -42,19 +69,19 @@ const description = "Learn how to spot the Asian hornet (Vespa velutina), also c
     <h2>Confusion species</h2>
     <div class="grid grid-2">
       <div>
-        <img src="/images/asian_hornet.png" alt="Asian hornet" width="300" style="max-width:100%; height:auto;">
+        <img src="/images/asian_hornet.png" alt="Asian hornet with yellow legs and orange band on abdomen" width="300" style="max-width:100%; height:auto;">
         <p><strong>Asian hornet</strong> – dark body, orange band, yellow legs.</p>
       </div>
       <div>
-        <img src="/images/european_hornet.png" alt="European hornet"  width="300" style="max-width:100%; height:auto;">
+        <img src="/images/european_hornet.png" alt="European hornet showing larger size and yellow markings"  width="300" style="max-width:100%; height:auto;">
         <p><strong>European hornet</strong> – larger, more yellow, reddish thorax.</p>
       </div>
       <div>
-        <img src="/images/wasp.png" alt="Common wasp"  width="200" height="150" style="max-width:100%; height:auto;">
+        <img src="/images/wasp.png" alt="Common wasp is much smaller"  width="200" height="150" style="max-width:100%; height:auto;">
         <p><strong>Common wasp</strong> – smaller, striped yellow/black, thin waist.</p>
       </div>
       <div>
-        <img src="/images/honeybee.png" alt="Honey bee"  width="200" height="150" style="max-width:100%; height:auto;">
+        <img src="/images/honeybee.png" alt="Honey bee with hairy thorax and pollen baskets"  width="200" height="150" style="max-width:100%; height:auto;">
         <p><strong>Honey bee</strong> – smaller, furry, golden-brown, carries pollen baskets.</p>
       </div>
     </div>
