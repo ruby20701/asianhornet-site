@@ -1,7 +1,30 @@
 ---
 import Base from "../layouts/Base.astro";
-const title = "Resources";
-const description = "Identification guides, authority links, and press resources.";
+const title = "Resources: identify, report, and respond";
+const description = "Official reporting links, national associations, practical guidance and supplier references for managing Asian hornet risks.";
+const site = "https://asianhornet.com";
+
+const breadcrumb = {
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  itemListElement:[
+    { "@type":"ListItem", position:1, name:"Home", item:`${site}/` },
+    { "@type":"ListItem", position:2, name:"Resources", item:`${site}/resources/` }
+  ]
+};
+
+// Replace URLs with your real links
+const itemList = {
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  name:"Asian hornet resources",
+  itemListElement:[
+    { "@type":"ListItem", position:1, name:"UK Asian Hornet Watch app", url:"https://example.com/uk-app" },
+    { "@type":"ListItem", position:2, name:"France official reporting portal", url:"https://example.com/fr-portal" },
+    { "@type":"ListItem", position:3, name:"Beekeeping associations directory", url:"https://example.com/associations" },
+    { "@type":"ListItem", position:4, name:"Guidance on traps and monitoring", url:"https://example.com/guidance" }
+  ]
+};
 ---
 <Base {title} {description}>
   <section class="card">
