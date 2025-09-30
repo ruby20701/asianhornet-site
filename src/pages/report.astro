@@ -1,11 +1,37 @@
 ---
 import Base from "../layouts/Base.astro";
+const title = "How to report an Asian hornet sighting";
+const description = "Report Asian hornet sightings through official channels. Learn what evidence to collect and how to stay safe around nests.";
+const site = 'https://asianhornet.com';
 
-const title = "Asian Hornet Sightings Map";
-const description = "Latest reports of Asian hornet sightings across the UK and Europe.";
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: 'Report a sighting', item: `${site}/report/` }
+  ]
+};
+
+const howTo = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Report an Asian hornet sighting',
+  description: 'What to capture and where to submit your report.',
+  step: [
+    { '@type': 'HowToStep', name: 'Observe safely', text: 'Keep distance from any nest; do not disturb.' },
+    { '@type': 'HowToStep', name: 'Collect evidence', text: 'Take a clear photo or video if safe; note date, time, and exact location.' },
+    { '@type': 'HowToStep', name: 'Submit to authorities', text: 'Use the official reporting service for your country (e.g., UK Asian Hornet Watch app).' }
+  ]
+};
 ---
 
 <Base {title} {description}>
+ <!-- Report page content -->
+
+  <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+  <script type="application/ld+json">{JSON.stringify(howTo)}</script>
+
   <article class="card">
     <h1>Asian hornet sightings</h1>
     <p>
